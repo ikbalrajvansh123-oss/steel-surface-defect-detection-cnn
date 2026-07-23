@@ -124,7 +124,7 @@ if option == "Upload Image":
 
         st.info(f"Confidence: {conf:.2f}%")
 
-        if conf < 70.0:
+        if conf < 40.0:
             st.success("✅ Normal Surface — No Defect Detected (Low Confidence, Surface is OK)")
         else:
             st.error(f"⚠️ Defect Detected: **{pred}** (Confidence: {conf:.2f}%)")
