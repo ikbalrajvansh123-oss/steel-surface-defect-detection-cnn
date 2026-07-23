@@ -119,8 +119,8 @@ if option == "Upload Image":
         pred, conf, heatmap = predict(image)
 
         col1, col2 = st.columns(2)
-        col1.image(image, caption="Original Image", use_container_width =True)
-        col2.image(heatmap, caption="Grad-CAM Heatmap", use_container_width =True)
+        col1.image(image, caption="Original Image", use_column_width=True)
+        col2.image(heatmap, caption="Grad-CAM Heatmap", use_column_width=True)
 
         st.success(f"Prediction: {pred}")
         st.info(f"Confidence: {conf:.2f}%")
@@ -138,8 +138,8 @@ elif option == "Click Photo":
         pred, conf, heatmap = predict(image)
 
         col1, col2 = st.columns(2)
-        col1.image(image, caption="Captured Image", use_container_width =True)
-        col2.image(heatmap, caption="Grad-CAM Heatmap", use_container_width =True)
+        col1.image(image, caption="Captured Image", use_column_width=True)
+        col2.image(heatmap, caption="Grad-CAM Heatmap", use_column_width=True)
 
         st.success(f"Prediction: {pred}")
         st.info(f"Confidence: {conf:.2f}%")
