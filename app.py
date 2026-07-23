@@ -122,8 +122,12 @@ if option == "Upload Image":
         col1.image(image, caption="Original Image", use_column_width=True)
         col2.image(heatmap, caption="Grad-CAM Heatmap", use_column_width=True)
 
-        st.success(f"Prediction: {pred}")
         st.info(f"Confidence: {conf:.2f}%")
+
+        if conf < 65.0:
+            st.success("✅ Normal Surface — No Defect Detected (Low Confidence, Surface is OK)")
+        else:
+            st.error(f"⚠️ Defect Detected: **{pred}** (Confidence: {conf:.2f}%)")
 
 
 
@@ -141,5 +145,9 @@ elif option == "Click Photo":
         col1.image(image, caption="Captured Image", use_column_width=True)
         col2.image(heatmap, caption="Grad-CAM Heatmap", use_column_width=True)
 
-        st.success(f"Prediction: {pred}")
         st.info(f"Confidence: {conf:.2f}%")
+
+        if conf < 65.0:
+            st.success("✅ Normal Surface — No Defect Detected (Low Confidence, Surface is OK)")
+        else:
+            st.error(f"⚠️ Defect Detected: **{pred}** (Confidence: {conf:.2f}%)")
